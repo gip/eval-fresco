@@ -98,7 +98,7 @@ function ThreadsTab() {
       case "system":
         return { borderLeftColor: "#ffff00" };
       default:
-        return { borderLeftColor: "#ff6600" };
+        return { borderLeftColor: "rgb(237, 165, 87)" };
     }
   };
 
@@ -109,13 +109,13 @@ function ThreadsTab() {
       case "system":
         return "#ffff00";
       default:
-        return "#ff8c00";
+        return "rgb(237, 165, 87)";
     }
   };
 
   return (
     <div>
-      <h2 style={{ marginBottom: "16px", color: "#ff8c00" }}>
+      <h2 style={{ marginBottom: "16px", color: "rgb(237, 165, 87)" }}>
         MESSAGE THREADS - TRADING DESK
       </h2>
 

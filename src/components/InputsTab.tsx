@@ -44,7 +44,7 @@ function InputsTab() {
 
   return (
     <div>
-      <h2 style={{ marginBottom: "16px", color: "#ff8c00" }}>ORDER ENTRY</h2>
+      <h2 style={{ marginBottom: "16px", color: "rgb(237, 165, 87)" }}>ORDER ENTRY</h2>
 
       <form className="input-form" onSubmit={handleSubmit}>
         <div className="form-row">
@@ -156,7 +156,7 @@ function InputsTab() {
 
       {orders.length > 0 && (
         <div style={{ marginTop: "24px" }}>
-          <h3 style={{ marginBottom: "12px", color: "#ff8c00" }}>
+          <h3 style={{ marginBottom: "12px", color: "rgb(237, 165, 87)" }}>
             PENDING ORDERS
           </h3>
           <table className="data-grid">
@@ -175,7 +175,7 @@ function InputsTab() {
               {orders.map((order) => (
                 <tr key={order.id}>
                   <td style={{ color: "#888888" }}>{order.timestamp}</td>
-                  <td style={{ color: "#ff8c00", fontWeight: "bold" }}>
+                  <td style={{ color: "rgb(237, 165, 87)", fontWeight: "bold" }}>
                     {order.symbol}
                   </td>
                   <td

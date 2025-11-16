@@ -6,7 +6,7 @@
   line-height: 1.4;
   font-weight: 400;
 
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   background-color: #000000;
 
   font-synthesis: none;
@@ -33,12 +33,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #000000;
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
 }
 
 /* Header Styles */
 .header {
-  background-color: #ff6600;
+  background-color: rgb(237, 165, 87);
   color: #000000;
   padding: 8px 16px;
   display: flex;
@@ -46,7 +46,7 @@ body {
   align-items: center;
   font-weight: bold;
   font-size: 16px;
-  border-bottom: 2px solid #ff8c00;
+  border-bottom: 2px solid rgb(217, 148, 75);
 }
 
 .logo {
@@ -63,7 +63,7 @@ body {
 
 .status-item {
   background-color: #000000;
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   padding: 4px 8px;
   border-radius: 2px;
 }
@@ -72,7 +72,7 @@ body {
 .tab-navigation {
   display: flex;
   background-color: #1a1a1a;
-  border-bottom: 1px solid #ff6600;
+  border-bottom: 1px solid rgb(237, 165, 87);
   padding: 0;
 }
 
@@ -91,11 +91,11 @@ body {
 
 .tab:hover {
   background-color: #2a2a2a;
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
 }
 
 .tab.active {
-  background-color: #ff6600;
+  background-color: rgb(237, 165, 87);
   color: #000000;
 }
 
@@ -117,10 +117,10 @@ body {
 
 .data-grid th {
   background-color: #1a1a1a;
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   padding: 10px;
   text-align: left;
-  border-bottom: 2px solid #ff6600;
+  border-bottom: 2px solid rgb(237, 165, 87);
   font-weight: bold;
   position: sticky;
   top: 0;
@@ -151,7 +151,7 @@ body {
 .input-form {
   background-color: #1a1a1a;
   padding: 20px;
-  border: 1px solid #ff6600;
+  border: 1px solid rgb(237, 165, 87);
   border-radius: 4px;
   max-width: 800px;
 }
@@ -163,7 +163,7 @@ body {
 }
 
 .form-group label {
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   margin-bottom: 6px;
   font-weight: bold;
   font-size: 12px;
@@ -172,8 +172,8 @@ body {
 .form-group input,
 .form-group select {
   background-color: #000000;
-  color: #ff8c00;
-  border: 1px solid #ff6600;
+  color: rgb(237, 165, 87);
+  border: 1px solid rgb(237, 165, 87);
   padding: 8px 12px;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
@@ -182,8 +182,8 @@ body {
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #ff8c00;
-  box-shadow: 0 0 5px #ff6600;
+  border-color: rgb(241, 181, 111);
+  box-shadow: 0 0 5px rgb(237, 165, 87);
 }
 
 .form-row {
@@ -193,7 +193,7 @@ body {
 }
 
 .submit-button {
-  background-color: #ff6600;
+  background-color: rgb(237, 165, 87);
   color: #000000;
   border: none;
   padding: 12px 24px;
@@ -206,11 +206,11 @@ body {
 }
 
 .submit-button:hover {
-  background-color: #ff8c00;
+  background-color: rgb(241, 181, 111);
 }
 
 .submit-button:active {
-  background-color: #cc5200;
+  background-color: rgb(217, 148, 75);
 }
 
 /* Thread/Message Styles */
@@ -222,7 +222,7 @@ body {
 
 .message {
   background-color: #1a1a1a;
-  border-left: 3px solid #ff6600;
+  border-left: 3px solid rgb(237, 165, 87);
   padding: 12px;
   border-radius: 4px;
 }
@@ -235,7 +235,7 @@ body {
 }
 
 .message-sender {
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   font-weight: bold;
 }
 
@@ -258,7 +258,7 @@ body {
 
 .stat-card {
   background-color: #1a1a1a;
-  border: 1px solid #ff6600;
+  border: 1px solid rgb(237, 165, 87);
   padding: 16px;
   border-radius: 4px;
 }
@@ -270,7 +270,7 @@ body {
 }
 
 .stat-value {
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   font-size: 24px;
   font-weight: bold;
 }
@@ -289,7 +289,7 @@ body {
 
 .strategy-card {
   background-color: #1a1a1a;
-  border: 1px solid #ff6600;
+  border: 1px solid rgb(237, 165, 87);
   padding: 16px;
   border-radius: 4px;
 }
@@ -302,7 +302,7 @@ body {
 }
 
 .strategy-name {
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   font-size: 16px;
   font-weight: bold;
 }
@@ -342,7 +342,7 @@ body {
 }
 
 .metric-value {
-  color: #ff8c00;
+  color: rgb(237, 165, 87);
   font-size: 14px;
   font-weight: bold;
   margin-top: 4px;
@@ -359,10 +359,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff6600;
+  background: rgb(237, 165, 87);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff8c00;
+  background: rgb(241, 181, 111);
 }

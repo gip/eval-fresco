@@ -97,7 +97,7 @@ function StrategiesTab() {
 
   return (
     <div>
-      <h2 style={{ marginBottom: "16px", color: "#ff8c00" }}>
+      <h2 style={{ marginBottom: "16px", color: "rgb(237, 165, 87)" }}>
         STRATEGY MONITOR
       </h2>
 

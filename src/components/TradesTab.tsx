@@ -132,7 +132,7 @@ function TradesTab() {
 
   return (
     <div>
-      <h2 style={{ marginBottom: "16px", color: "#ff8c00" }}>
+      <h2 style={{ marginBottom: "16px", color: "rgb(237, 165, 87)" }}>
         TRADE HISTORY - TODAY
       </h2>
 
@@ -202,7 +202,7 @@ function TradesTab() {
             <tr key={trade.id}>
               <td style={{ color: "#888888" }}>#{trade.id}</td>
               <td style={{ color: "#888888" }}>{trade.timestamp}</td>
-              <td style={{ color: "#ff8c00", fontWeight: "bold" }}>
+              <td style={{ color: "rgb(237, 165, 87)", fontWeight: "bold" }}>
                 {trade.symbol}
               </td>
               <td

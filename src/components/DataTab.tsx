@@ -132,7 +132,7 @@ function DataTab() {
 
   return (
     <div>
-      <h2 style={{ marginBottom: "16px", color: "#ff8c00" }}>
+      <h2 style={{ marginBottom: "16px", color: "rgb(237, 165, 87)" }}>
         MARKET DATA - REAL-TIME
       </h2>
       <table className="data-grid">
@@ -150,7 +150,7 @@ function DataTab() {
         <tbody>
           {marketData.map((stock) => (
             <tr key={stock.symbol}>
-              <td style={{ color: "#ff8c00", fontWeight: "bold" }}>
+              <td style={{ color: "rgb(237, 165, 87)", fontWeight: "bold" }}>
                 {stock.symbol}
               </td>
               <td style={{ color: "#ffffff" }}>${stock.price.toFixed(2)}</td>
