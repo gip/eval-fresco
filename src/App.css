@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
 :root {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
   line-height: 1.4;
   font-weight: 400;
@@ -80,7 +82,7 @@ body {
   border: none;
   padding: 12px 24px;
   cursor: pointer;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
   font-weight: bold;
   border-right: 1px solid #333333;
@@ -109,7 +111,7 @@ body {
 .data-grid {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 13px;
 }
 
@@ -173,7 +175,7 @@ body {
   color: #ff8c00;
   border: 1px solid #ff6600;
   padding: 8px 12px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
 }
 
@@ -195,7 +197,7 @@ body {
   color: #000000;
   border: none;
   padding: 12px 24px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
