@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Bloomberg Terminal",
+  "productName": "Fresco Terminal",
   "version": "0.1.0",
-  "identifier": "com.bloomberg.terminal",
+  "identifier": "com.fresco.terminal",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Bloomberg Terminal",
+        "title": "Fresco Terminal",
         "width": 1400,
         "height": 900
       }

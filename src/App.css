@@ -25,7 +25,7 @@ body {
   overflow: hidden;
 }
 
-.bloomberg-terminal {
+.fresco-terminal {
   width: 100vw;
   height: 100vh;
   display: flex;

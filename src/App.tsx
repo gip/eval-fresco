@@ -37,9 +37,9 @@ function App() {
   };
 
   return (
-    <div className="bloomberg-terminal">
+    <div className="fresco-terminal">
       <div className="header">
-        <div className="logo">BLOOMBERG</div>
+        <div className="logo">FRESCO</div>
         <div className="status-bar">
           <span className="status-item">LIVE</span>
           <span className="status-item">16:23:45 EST</span>

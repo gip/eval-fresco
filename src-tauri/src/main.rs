@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    bloomberg_terminal_lib::run()
+    fresco_terminal_lib::run()
 }
