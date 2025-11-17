@@ -5,8 +5,9 @@ import InputsTab from "./components/InputsTab";
 import ThreadsTab from "./components/ThreadsTab";
 import TradesTab from "./components/TradesTab";
 import StrategiesTab from "./components/StrategiesTab";
+import ApiDemo from "./components/ApiDemo";
 
-type TabType = "data" | "inputs" | "threads" | "trades" | "strategies";
+type TabType = "data" | "inputs" | "threads" | "trades" | "strategies" | "api";
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabType>("data");
@@ -17,6 +18,7 @@ function App() {
     { id: "threads" as TabType, label: "THREADS" },
     { id: "trades" as TabType, label: "TRADES" },
     { id: "strategies" as TabType, label: "STRATEGIES" },
+    { id: "api" as TabType, label: "API DEMO" },
   ];
 
   const renderTabContent = () => {
@@ -31,6 +33,8 @@ function App() {
         return <TradesTab />;
       case "strategies":
         return <StrategiesTab />;
+      case "api":
+        return <ApiDemo />;
       default:
         return <DataTab />;
     }
