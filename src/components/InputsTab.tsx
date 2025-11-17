@@ -1,201 +1,80 @@
 import { useState } from "react";
 
-function InputsTab() {
-  const [formData, setFormData] = useState({
-    symbol: "",
-    orderType: "market",
-    side: "buy",
-    quantity: "",
-    price: "",
-    stopPrice: "",
-    timeInForce: "day",
-    account: "PRIMARY",
-  });
+interface InputEntry {
+  id: number;
+  timestamp: string;
+  content: string;
+}
 
-  const [orders, setOrders] = useState<any[]>([]);
+function InputsTab() {
+  const [inputText, setInputText] = useState("");
+  const [entries, setEntries] = useState<InputEntry[]>([]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const newOrder = {
-      ...formData,
-      id: Date.now(),
-      timestamp: new Date().toLocaleTimeString(),
-      status: "PENDING",
-    };
-    setOrders([newOrder, ...orders]);
-    // Reset form
-    setFormData({
-      ...formData,
-      symbol: "",
-      quantity: "",
-      price: "",
-      stopPrice: "",
-    });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    if (inputText.trim()) {
+      const newEntry = {
+        id: Date.now(),
+        timestamp: new Date().toLocaleTimeString(),
+        content: inputText.trim(),
+      };
+      setEntries([newEntry, ...entries]);
+      setInputText("");
+    }
   };
 
   return (
     <div>
-      <h2 style={{ marginBottom: "16px", color: "rgb(237, 165, 87)" }}>ORDER ENTRY</h2>
+      <h2 style={{ marginBottom: "16px", color: "rgb(237, 165, 87)" }}>
+        INPUT
+      </h2>
 
       <form className="input-form" onSubmit={handleSubmit}>
-        <div className="form-row">
-          <div className="form-group">
-            <label>SYMBOL</label>
-            <input
-              type="text"
-              name="symbol"
-              value={formData.symbol}
-              onChange={handleChange}
-              placeholder="e.g., AAPL"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>ACCOUNT</label>
-            <select name="account" value={formData.account} onChange={handleChange}>
-              <option value="PRIMARY">PRIMARY</option>
-              <option value="SECONDARY">SECONDARY</option>
-              <option value="MARGIN">MARGIN</option>
-            </select>
-          </div>
+        <div className="form-group">
+          <label>PASTE LINK OR TEXT</label>
+          <textarea
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            placeholder="Enter a URL or paste any text content..."
+            rows={8}
+            style={{
+              backgroundColor: "#000000",
+              color: "rgb(237, 165, 87)",
+              border: "1px solid rgb(237, 165, 87)",
+              padding: "12px",
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "14px",
+              width: "100%",
+              resize: "vertical",
+              borderRadius: "4px",
+            }}
+          />
         </div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label>SIDE</label>
-            <select name="side" value={formData.side} onChange={handleChange}>
-              <option value="buy">BUY</option>
-              <option value="sell">SELL</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>ORDER TYPE</label>
-            <select
-              name="orderType"
-              value={formData.orderType}
-              onChange={handleChange}
-            >
-              <option value="market">MARKET</option>
-              <option value="limit">LIMIT</option>
-              <option value="stop">STOP</option>
-              <option value="stop-limit">STOP LIMIT</option>
-            </select>
-          </div>
-        </div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label>QUANTITY</label>
-            <input
-              type="number"
-              name="quantity"
-              value={formData.quantity}
-              onChange={handleChange}
-              placeholder="0"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>LIMIT PRICE</label>
-            <input
-              type="number"
-              step="0.01"
-              name="price"
-              value={formData.price}
-              onChange={handleChange}
-              placeholder="0.00"
-              disabled={formData.orderType === "market"}
-            />
-          </div>
-        </div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label>STOP PRICE</label>
-            <input
-              type="number"
-              step="0.01"
-              name="stopPrice"
-              value={formData.stopPrice}
-              onChange={handleChange}
-              placeholder="0.00"
-              disabled={
-                formData.orderType !== "stop" &&
-                formData.orderType !== "stop-limit"
-              }
-            />
-          </div>
-          <div className="form-group">
-            <label>TIME IN FORCE</label>
-            <select
-              name="timeInForce"
-              value={formData.timeInForce}
-              onChange={handleChange}
-            >
-              <option value="day">DAY</option>
-              <option value="gtc">GTC (Good Till Cancel)</option>
-              <option value="ioc">IOC (Immediate or Cancel)</option>
-              <option value="fok">FOK (Fill or Kill)</option>
-            </select>
-          </div>
-        </div>
-
         <button type="submit" className="submit-button">
-          SUBMIT ORDER
+          SUBMIT
         </button>
       </form>
 
-      {orders.length > 0 && (
+      {entries.length > 0 && (
         <div style={{ marginTop: "24px" }}>
           <h3 style={{ marginBottom: "12px", color: "rgb(237, 165, 87)" }}>
-            PENDING ORDERS
+            SUBMITTED ENTRIES
           </h3>
-          <table className="data-grid">
-            <thead>
-              <tr>
-                <th>TIME</th>
-                <th>SYMBOL</th>
-                <th>SIDE</th>
-                <th>TYPE</th>
-                <th>QTY</th>
-                <th>PRICE</th>
-                <th>STATUS</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders.map((order) => (
-                <tr key={order.id}>
-                  <td style={{ color: "#888888" }}>{order.timestamp}</td>
-                  <td style={{ color: "rgb(237, 165, 87)", fontWeight: "bold" }}>
-                    {order.symbol}
-                  </td>
-                  <td
-                    className={order.side === "buy" ? "positive" : "negative"}
-                    style={{ textTransform: "uppercase" }}
-                  >
-                    {order.side}
-                  </td>
-                  <td style={{ color: "#cccccc", textTransform: "uppercase" }}>
-                    {order.orderType}
-                  </td>
-                  <td style={{ color: "#ffffff" }}>{order.quantity}</td>
-                  <td style={{ color: "#ffffff" }}>
-                    {order.price || "MARKET"}
-                  </td>
-                  <td className="neutral">{order.status}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="thread-container">
+            {entries.map((entry) => (
+              <div
+                key={entry.id}
+                className="message"
+              >
+                <div className="message-header">
+                  <span className="message-time">{entry.timestamp}</span>
+                </div>
+                <div className="message-body" style={{ wordBreak: "break-all" }}>
+                  {entry.content}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
