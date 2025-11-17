@@ -15,11 +15,30 @@ name = "fresco_terminal_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = "2.5.2"
+tauri-build = { version = "2.5.2", optional = true }
 
 [dependencies]
-tauri = { version = "2.9.3", features = [] }
-tauri-plugin-opener = "2.5.2"
+# Shared dependencies
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+
+# Tauri mode dependencies (optional)
+tauri = { version = "2.9.3", features = [], optional = true }
+tauri-plugin-opener = { version = "2.5.2", optional = true }
+
+# Web server mode dependencies (optional)
+axum = { version = "0.7", optional = true }
+tokio = { version = "1", features = ["full"], optional = true }
+tower-http = { version = "0.6", features = ["fs", "cors"], optional = true }
+
+[features]
+default = ["tauri-app"]
+tauri-app = ["tauri", "tauri-plugin-opener", "tauri-build"]
+web-server = ["axum", "tokio", "tower-http"]
+
+# Web server binary
+[[bin]]
+name = "fresco-web-server"
+path = "src/bin/web-server.rs"
+required-features = ["web-server"]
 
